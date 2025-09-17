@@ -8,7 +8,7 @@ import numpy as np
 
 # ---------------------- Page config ----------------------
 st.set_page_config(page_title="Churn Predictor", layout="wide")
-st.title("Customer Churn Prediction (Streamlit)")
+st.title("Customer Churn Prediction")
 
 # ---------------------- Paths ----------------------
 BASE_DIR = os.path.dirname(__file__)  # directory where app.py resides
@@ -98,3 +98,12 @@ else:
             st.metric("Prediction", "Churn" if pred==1 else "No churn", delta=f"Prob: {prob:.2f}")
         except Exception as e:
             st.error(f"Error making prediction: {e}")
+st.markdown(
+    """
+    <hr style='margin:50px 0'>
+    <p style='text-align: center; color: gray; font-size:14px;'>
+        Made with ❤️ by Anshuman Nigam
+    </p>
+    """,
+    unsafe_allow_html=True
+)
